@@ -1,8 +1,9 @@
-module.exports = app => 
-	app.get('/noticia', (req, res) => {	
-		const connection = app.config.dbConnection();
+module.exports = application => 
+	application.get('/noticia', (req, res) => {	
+		const connection = application.config.dbConnection();
+		const { noticiasModel } = application.app.models;	
 
-		connection.query('select * from noticias where id_noticia = 2', (error, result) => {
+		noticiasModel.getNoticia(connection, (error, result) => {
 			res.render('./noticias/noticia', {
 				noticia: result
 			});
