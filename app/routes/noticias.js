@@ -5,8 +5,8 @@ module.exports = app => {
 	
 		const connection = mysql.createConnection({
 			host: 'localhost',
-			user: 'root',
-			password: '<pass>',
+			user: 'noob',
+			password: '123',
 			database: 'portal_noticias',
 		});
 	
