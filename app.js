@@ -1,4 +1,6 @@
 const express = require('express');
+const msg = require('./mod_test');
+
 const app = express();
 
 app.set('view engine', 'ejs'); // Engine of views
@@ -15,7 +17,6 @@ app.get('/noticias', (req, res) => {
 	res.render('./noticias/noticias');
 });
 
-
 app.listen(3000, () => {
-	console.log('servidor rodando');
+	console.log(msg());
 });
