@@ -5,6 +5,9 @@ const app = express();
 app.set('view engine', 'ejs'); // Engine of views
 app.set('views', './app/views');
 
-consign().include('app/routes').into(app);
+consign()
+	.include('app/routes')
+	.then('config/dbConnection.js') // Better with extension JS
+	.into(app);
 
 module.exports = app;
