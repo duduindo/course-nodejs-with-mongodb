@@ -1,9 +1,4 @@
-const express = require('express');
-const msg = require('./mod_test');
-
-const app = express();
-
-app.set('view engine', 'ejs'); // Engine of views
+const app = require('./config/server');
 
 app.get('/', (req, res) => {
 	res.render('./home/index');
@@ -18,5 +13,5 @@ app.get('/noticias', (req, res) => {
 });
 
 app.listen(3000, () => {
-	console.log(msg());
+	console.log("Servidor ON");
 });
