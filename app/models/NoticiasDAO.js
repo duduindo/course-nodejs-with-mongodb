@@ -17,6 +17,7 @@ class NoticiasDAO {
 	}
 
 	salvarNoticia(noticia, callback) {
+		console.log(noticia);
 		this.connection.query('insert into noticias set ? ', noticia, callback);
 	}
 }
